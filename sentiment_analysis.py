@@ -10,8 +10,6 @@ st.write("""
 # SENTIMENT ANALYSIS
 """)
 
-__version__ = "3.2.3"
-
 #Get Feature input from users
 
 def get_user_text():
@@ -37,5 +35,5 @@ import sys
 from streamlit import cli as stcli
 
 if __name__ == '__main__':
-    sys.argv = ["streamlit", "run", "webapp.py"]
+    sys.argv = ["streamlit", "run", "sentiment_analysis.py"]
     sys.exit(stcli.main())
