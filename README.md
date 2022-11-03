@@ -6,9 +6,9 @@ Support vector classiNer(SVM) and count vectorizer using two methods(direct meth
 positive or negative. • Also use MultinomialNB (Naïve bayes) and count vectorizer using two methods(direct method, pipeline method) to classiNy if 
 the sentiment is positive or negative and compare the accuracies of all 4 models of the models • https://www.kaggle.com/d4rklucif3r/restaurant-reviews • 
 [[NOTE :There are two features - ‘review’ - the sentence and ‘sentiment’ - the label for the review. 1 means positive review and 0 means negative review.]]
-1.Create a dataframe
-2.process the data and do visualizations (represent using matplotlib / seaborn the number of positive reviews and negative reviews)( ex-use a bar graph )
-3.create svc model and count vectorizer separately (method 1)
+\n1.Create a dataframe
+\n2.process the data and do visualizations (represent using matplotlib / seaborn the number of positive reviews and negative reviews)( ex-use a bar graph )
+\n3.create svc model and count vectorizer separately (method 1)
 4.(method 2) create a pipeline with Vectorization model and ML algorithm to predict the Nnal sentiment.
 5.create NB model and count vectorizer separately (method 1)
 6.(method 2) create a pipeline with Vectorization model and ML algorithm to predict the Nnal sentiment for the multinomialNB and CountVectorizer
