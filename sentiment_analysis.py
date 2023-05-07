@@ -1,39 +1,39 @@
+#Description
 import streamlit as st
+import sys
+sys.path.append('src/')
 import joblib 
+
+
+#Title
+st.write("""
+# SENTIMENT ANALYSIS
+""")
+
+#Get Feature input from users
+
+def get_user_text():
+    user_test = st.text_input('Enter text here: ', '')
+    return(user_test)
+    
+#Store the user inputs
+user_text = get_user_text()
 
 model = joblib.load('src/SVC(pipeline)')
 
-def get_user_text():
-    user_test = st.text_input('Enter text here:', '')
-    if not user_test:
-        st.warning('Please enter some text.')
-    return user_test
+sentiment = model.predict([user_text])
+if sentiment == 0:
+    sentiment = 'Negative'
+elif sentiment == 1:
+    sentiment = 'Positive'
+st.write(sentiment)
+
+
     
-st.write("# SENTIMENT ANALYSIS")
 
-user_text = get_user_text()
-
-if user_text:
-    sentiment = model.predict([user_text])
-    if sentiment == 0:
-        sentiment = 'Negative'
-    elif sentiment == 1:
-        sentiment = 'Positive'
-    st.write(sentiment)
+import sys
+from streamlit import cli as stcli
 
 if __name__ == '__main__':
-    st.set_page_config(page_title='Sentiment Analysis', page_icon=':satisfied:')
-    st.write('This app analyzes the sentiment of text.')
-    st.write('Enter some text and click the button to see the sentiment.')
-    st.write('Created by [Your Name]')
-    st.write('---')
-    st.write('### Input')
-    user_text = get_user_text()
-    st.write('### Output')
-    if user_text:
-        sentiment = model.predict([user_text])
-        if sentiment == 0:
-            sentiment = 'Negative'
-        elif sentiment == 1:
-            sentiment = 'Positive'
-        st.write(sentiment)
+    sys.argv = ["streamlit", "run", "sentiment_analysis.py"]
+    sys.exit(stcli.main())
