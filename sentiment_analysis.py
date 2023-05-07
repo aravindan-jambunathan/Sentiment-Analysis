@@ -4,7 +4,7 @@ import sys
 sys.path.append('src/')
 import joblib 
 
-__version__ = "3.2.3"
+__version__ = "3.11.1"
 
 #Title
 st.write("""
